@@ -1,0 +1,34 @@
+{
+    "sourceFormat": "BIGTABLE",
+    "sourceUris": [
+        "https://googleapis.com/bigtable/projects/PROJECT_ID/instances/bq-sync-instance/tables/session"
+    ],
+    "bigtableOptions": {
+        "readRowkeyAsString": "true",
+        "ignoreUnspecifiedColumnFamilies": "true",
+        "columnFamilies": [
+            {
+                "familyId": "main",
+                "onlyReadLatest": "true",
+                "columns": [
+                    {
+                        "qualifierString": "customer_key",
+                        "type": "STRING"
+                    },
+                    {
+                        "qualifierString": "status",
+                        "type": "STRING"
+                    },
+                    {
+                        "qualifierString": "start_ts",
+                        "type": "STRING"
+                    },
+                    {
+                        "qualifierString": "end_ts",
+                        "type": "STRING"
+                    }
+                ]
+            }
+        ]
+    }
+}
